@@ -1,44 +1,43 @@
-# Yolo v3 Object Detection in Tensorflow
-Yolo v3 is an algorithm that uses deep convolutional neural networks to detect objects. <br> <br>
-[Kaggle notebook](https://www.kaggle.com/aruchomu/yolo-v3-object-detection-in-tensorflow) 
+# Yolo v3 를 활용한 오브젝트 인식
+Yolo v3 는 딥러닝으 한 종류로써 오브젝트를 인식하는데 쓰인다. <br> <br>
 
-## Getting started
+## 시작단계
 
-### Prerequisites
-This project is written in Python 3.6.6 using Tensorflow (deep learning), NumPy (numerical computing), Pillow (image processing), OpenCV (computer vision) and seaborn (visualization) packages.
+### 준비물
+ Tensorflow (deep learning), NumPy (numerical computing), Pillow (image processing), OpenCV (computer vision) and seaborn (visualization)
 
 ```
 pip install -r requirements.txt
 ```
 
-### Downloading official pretrained weights
-Let's download official weights pretrained on COCO dataset. 
+### yolo v3 에 필요한 weight 를 다운로드하기
+COCO dataset 을 다운로드 하기 
 
 ```
 wget -P weights https://pjreddie.com/media/files/yolov3.weights
 ```
 
-### Save the weights in Tensorflow format
-Save the weights using `load_weights.py` script.
+### Tensorflow 폼에 맞게 저장하기
+ `load_weights.py` script 를 써서 저장하기
 
 ```
 python load_weights.py
 ```
 
-## Running the model
-Now you can run the model using `detect.py` script. Don't forget to set the IoU (Intersection over Union) and confidence thresholds.
-### Usage
+## 모델 실행하기
+ `detect.py` script 을 써서 모델 실행한다. IoU 와 Threshhold 세팅하기
+### Iou,threshold, detection 실행
 ```
 python detect.py <images/video> <iou threshold> <confidence threshold> <filenames>
 ```
-### Images example
-Let's run an example using sample images.
+### 이미지 실행 
+
 ```
 python detect.py images 0.5 0.5 data/images/dog.jpg data/images/office.jpg
 ```
-Then you can find the detections in the `detections` folder.
+ `detections` 폴더에 저장.
 <br>
-You should see something like this.
+실행 결과.
 ```
 detection_1.jpg
 ```
@@ -47,12 +46,12 @@ detection_1.jpg
 detection_2.jpg
 ```
 ![alt text](https://github.com/heartkilla/yolo-v3/blob/master/data/detection_examples/detection_2.jpg)
-### Video example
-You can also run the script with video files.
+### 비디오 실행
+비디오로 오브젝트 인식
 ```
 python detect.py video 0.5 0.5 data/video/shinjuku.mp4
 ```
-The detections will be saved as `detections.mp4` file.
+ `detections.mp4` 파일로 저장
 ![alt text](https://github.com/heartkilla/yolo-v3/blob/master/data/detection_examples/detections.gif)
 
 ## To-Do List
