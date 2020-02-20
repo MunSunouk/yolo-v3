@@ -47,7 +47,7 @@ detection_2.jpg
 ```
 ![alt text](https://github.com/heartkilla/yolo-v3/blob/master/data/detection_examples/detection_2.jpg)
 ### 비디오 실행
-비디오로 오브젝트 인식
+             비디오로 오브젝트 인식
 ```
 python detect.py video 0.5 0.5 data/video/shinjuku.mp4
 ```
