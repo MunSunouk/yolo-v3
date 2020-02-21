@@ -7,7 +7,7 @@ Usage:
 
 Example:
     python detect.py images 0.5 0.5 data/images/dog.jpg data/images/office.jpg
-    python detect.py video 0.5 0.5 data/video/shinjuku.mp4
+    python detect.py video 0.5 0.5 data/video/1.mp4
 
 Note that only one video can be processed at one run.
 """
@@ -63,7 +63,7 @@ def main(type, iou_threshold, confidence_threshold, input_names):
                           cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
             fourcc = cv2.VideoWriter_fourcc(*'X264')
             fps = cap.get(cv2.CAP_PROP_FPS)
-            out = cv2.VideoWriter('./detections/detections.mp4', fourcc, fps,
+            out = cv2.VideoWriter('./detections/detections01.mp4', fourcc, fps,
                                   (int(frame_size[0]), int(frame_size[1])))
 
             try:
